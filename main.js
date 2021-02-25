@@ -1,1 +1,7 @@
-console.log("Test");
+function setup() {
+	console.log("Started");
+}
+
+function draw() {
+	console.log("Drawing");
+}
