@@ -1,7 +1,7 @@
 function setup() {
-	console.log("Started");
+	createCanvas(400, 400);
 }
 
 function draw() {
-	console.log("Drawing");
+	background(0, 0, 0);
 }
