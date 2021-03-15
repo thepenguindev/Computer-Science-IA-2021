@@ -1,5 +1,8 @@
-import Note from './Objects/Note.mjs';
+import Vec2 from './Objects/Vec2.mjs';
 
-let note = new Note(0, 0);
+let vec_one = new Vec2(0, 0);
+let vec_two = new Vec2(1, 1);
 
-console.log(note.pos.x, note.pos.y);
+console.log(vec_one);
+console.log(vec_two);
+console.log(vec_one.equals(vec_two));
