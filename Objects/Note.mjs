@@ -1,6 +1,6 @@
 import Vec2 from './Vec2.mjs';
 
-export class Note {
+export default class Note {
 	constructor(x, y) {
 		this.isSharp = false;
 		this.isFlat = false;
