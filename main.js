@@ -1,10 +1,11 @@
-import Vec2 from './Objects/Vec2.mjs';
+import VNote from './Objects/Note.js';
 
-let vec_one = new Vec2(0, 0);
-let vec_two = new Vec2(1, 1);
+let note = new Note(0, 0);
 
-console.log(vec_one);
-console.log(vec_one.x, vec_one.y);
-console.log(vec_two);
-console.log(vec_two.x, vec_two.y);
-console.log(vec_one.equals(vec_two));
+const step = function() {
+    console.log(note.pos.x, note.pos.y);
+}
+
+const draw = function() {
+
+}
