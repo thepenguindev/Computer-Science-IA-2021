@@ -11,5 +11,5 @@ const draw = function() {
 }
 
 // Exposing Browser to p5 functions because modules are wonky w/ p5
-//window.setup = setup;
-//window.draw = draw;
+window.setup = setup;
+window.draw = draw;
