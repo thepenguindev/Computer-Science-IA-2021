@@ -15,7 +15,7 @@ const preload = function() {
 const setup = function() {
     createCanvas(1000, 700);
     // Creating Scale
-    scale = new Scale();
+    scale = new Scale(images);
 }
 
 const draw = function() {
