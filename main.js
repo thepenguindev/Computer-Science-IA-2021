@@ -9,7 +9,7 @@ const setup = function() {
 }
 
 const draw = function() {
-    background(44, 44, 44);
+    background(100, 100, 100);
     scale.update();
     scale.draw();
 }
