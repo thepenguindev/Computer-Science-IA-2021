@@ -10,6 +10,7 @@ const setup = function() {
 
 const draw = function() {
     background(44, 44, 44);
+    scale.update();
     scale.draw();
 }
 
