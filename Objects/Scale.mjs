@@ -1,14 +1,16 @@
 import Note from './Note.mjs';
 
 export default class Scale {
-	constructor() {
+	constructor(images) {
 		this.notes = [];
 		this.selectedNote = undefined;
-		this.setupNotes();
+		this.setupNotes(images);
 	}
 
-	setupNotes() {
-		this.notes.push(new Note(100, 100));
+	setupNotes(images) {
+		let note = new Note(100, 400);
+		note.getImages(images);
+		this.notes.push(note);
 	}
 
 	drawBar() {

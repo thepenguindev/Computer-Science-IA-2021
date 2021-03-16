@@ -4,10 +4,12 @@ import Scale from './Objects/Scale.mjs';
 var scale;
 
 // Images
-var sharp_image;
+let images = {
+    sharp_image: undefined
+}
 
 const preload = function() {
-    sharp_image = loadImage('images/sharp.png');
+    images.sharp_image = loadImage('images/sharp.png');
 }
 
 const setup = function() {
@@ -18,7 +20,6 @@ const setup = function() {
 
 const draw = function() {
     background(100, 100, 100);
-    image(sharp_image, 100, 400);
     scale.update();
     scale.draw();
 }

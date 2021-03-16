@@ -3,7 +3,9 @@ import Vec2 from './Vec2.mjs';
 export default class Note {
 	constructor(x, y) {
 		this.isSharp = false;
+		this.sharp_image;
 		this.isFlat = false;
+		this.flat_image;
 		this.pos = new Vec2(x, y);
 		// Drawing Variables
 		this.horizontal_radius = 5;
@@ -22,11 +24,15 @@ export default class Note {
 		line(this.pos.x + this.horizontal_radius, this.pos.y, this.pos.x + this.horizontal_radius, this.pos.y - this.line_length);
 		// Flat || Sharp
 		if (this.isSharp) {
-
+			image(this.sharp_image, 100, 400);
 		}
 		else if (this.isFlat) {
 
 		}
+	}
+
+	getImages(images) {
+		this.sharp_image = images.sharp_image;
 	}
 
 	setFlat(isFlat) {
