@@ -10,6 +10,8 @@ export default class Scale {
 	setupNotes(images) {
 		let note = new Note(100, 400);
 		note.getImages(images);
+		
+		note.setSharp(true);
 		this.notes.push(note);
 	}
 
