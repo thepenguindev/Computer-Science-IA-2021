@@ -20,6 +20,13 @@ export default class Note {
 		strokeWeight(2);
 		stroke(0);
 		line(this.pos.x + this.horizontal_radius, this.pos.y, this.pos.x + this.horizontal_radius, this.pos.y - this.line_length);
+		// Flat || Sharp
+		if (this.isSharp) {
+			
+		}
+		else if (this.isFlat) {
+
+		}
 	}
 
 	setFlat(isFlat) {

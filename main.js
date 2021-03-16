@@ -1,9 +1,18 @@
 import Scale from './Objects/Scale.mjs';
 
+// Objects
 var scale;
+
+// Images
+var sharp_image;
+
+const preload = function() {
+    sharp_image = loadImage('images/sharp.png');
+}
 
 const setup = function() {
     createCanvas(1000, 700);
+    Image(sharp_image, 100, 400);
     // Creating Scale
     scale = new Scale();
 }
@@ -15,5 +24,6 @@ const draw = function() {
 }
 
 // Exposing Browser to p5 functions because modules are wonky w/ p5
+window.preload = preload;
 window.setup = setup;
 window.draw = draw;
