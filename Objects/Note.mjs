@@ -8,7 +8,7 @@ export default class Note {
 		// Drawing Variables
 		this.horizontal_radius = 5;
 		this.vertical_radius = this.horizontal_radius * (4/5);
-		this.line_length = 40;
+		this.line_length = this.vertical_radius * 10;
 	}
 
 	draw() {
@@ -22,7 +22,7 @@ export default class Note {
 		line(this.pos.x + this.horizontal_radius, this.pos.y, this.pos.x + this.horizontal_radius, this.pos.y - this.line_length);
 		// Flat || Sharp
 		if (this.isSharp) {
-			
+
 		}
 		else if (this.isFlat) {
 
