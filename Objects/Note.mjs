@@ -6,9 +6,9 @@ export default class Note {
 		this.isFlat = false;
 		this.pos = new Vec2(x, y);
 		// Drawing Variables
-		this.horizontal_radius = 50;
+		this.horizontal_radius = 5;
 		this.vertical_radius = this.horizontal_radius * (4/5);
-		this.line_length = 100;
+		this.line_length = 50;
 	}
 
 	draw() {
