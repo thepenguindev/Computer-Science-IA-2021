@@ -12,13 +12,13 @@ const preload = function() {
 
 const setup = function() {
     createCanvas(1000, 700);
-    image(sharp_image, 100, 400);
     // Creating Scale
     scale = new Scale();
 }
 
 const draw = function() {
     background(100, 100, 100);
+    image(sharp_image, 100, 400);
     scale.update();
     scale.draw();
 }
