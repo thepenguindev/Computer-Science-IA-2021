@@ -1,13 +1,16 @@
-import Note from './Objects/Note.mjs';
+import Scale from './Objects/Scale.mjs';
 
-let note = new Note(0, 0);
+var scale;
 
 const setup = function() {
-    console.log(note.pos.x, note.pos.y);
+    createCanvas(1000, 700);
+    // Creating Scale
+    scale = new Scale();
 }
 
 const draw = function() {
-
+    background(44, 44, 44);
+    scale.draw();
 }
 
 // Exposing Browser to p5 functions because modules are wonky w/ p5
