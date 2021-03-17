@@ -27,6 +27,7 @@ export default class Note {
 			let sharp_pos = new Vec2(this.pos.x - (3 * this.horizontal_radius), this.pos.y);
 			console.log(this.sharp_image);
 			image(this.sharp_image, sharp_pos.x, sharp_pos.y);
+			this.sharp_image.resize(this.horizontal_radius, 0);
 		}
 		else if (this.isFlat) {
 

@@ -10,7 +10,6 @@ let images = {
 
 const preload = function() {
     images.sharp_image = loadImage('images/sharp.png');
-    images.sharp_image.resize(5, 0);
 }
 
 const setup = function() {
