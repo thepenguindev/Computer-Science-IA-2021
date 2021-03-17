@@ -1,3 +1,4 @@
+import { rejects } from 'node:assert';
 import Vec2 from './Vec2.mjs';
 
 export default class Note {
@@ -26,6 +27,9 @@ export default class Note {
 		if (this.isSharp) {
 			let sharp_pos = new Vec2(this.pos.x - this.horizontal_radius, this.pos.y);
 			image(this.sharp_image, sharp_pos.x, sharp_pos.y);
+			
+			fill(255, 0 ,0, 100);
+			rect(sharp_pos.x, sharp_pos.y, this.sharp_image.width, this.sharp_image.height);
 			//this.sharp_image.resize(this.horizontal_radius, 0);
 		}
 		else if (this.isFlat) {
