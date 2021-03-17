@@ -24,9 +24,9 @@ export default class Note {
 		line(this.pos.x + this.horizontal_radius, this.pos.y, this.pos.x + this.horizontal_radius, this.pos.y - this.line_length);
 		// Flat || Sharp
 		if (this.isSharp) {
-			let sharp_pos = new Vec2(this.pos.x - this.horizontal_radius, this.pos.y);
+			let sharp_pos = new Vec2(this.pos.x - (3 * this.horizontal_radius), this.pos.y);
 			image(this.sharp_image, sharp_pos.x, sharp_pos.y);
-			this.sharp_image.resize(this.horizontal_radius, 0);
+			this.sharp_image.resize(2 * this.horizontal_radius, 0);
 
 			fill(255, 0 ,0, 100);
 			rect(sharp_pos.x, sharp_pos.y, this.sharp_image.width, this.sharp_image.height);
