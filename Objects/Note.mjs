@@ -1,4 +1,3 @@
-import { rejects } from 'node:assert';
 import Vec2 from './Vec2.mjs';
 
 export default class Note {
