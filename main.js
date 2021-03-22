@@ -1,28 +1,30 @@
-import Scale from './Objects/Scale.mjs';
-
-// Objects
-var scale;
+var music_scale;
 
 // Images
 let images = {
-    sharp_image: undefined
+    sharp_image: undefined,
+    flat_image: undefined,
+    natural_image: undefined
 }
 
 const preload = function() {
     images.sharp_image = loadImage('images/sharp.png');
+    images.flat_image = loadImage('images/flat.png');
+    images.natural_image = loadImage('images/natural.png');
 }
 
 const setup = function() {
     createCanvas(1000, 700);
     imageMode(CENTER);
+    rectMode(CENTER);
     // Creating Scale
-    scale = new Scale(images);
+    music_scale = new Scale(images);
 }
 
 const draw = function() {
     background(100, 100, 100);
-    scale.update();
-    scale.draw();
+    music_scale.update();
+    music_scale.draw();
 }
 
 // Exposing Browser to p5 functions because modules are wonky w/ p5
