@@ -14,15 +14,14 @@ const preload = function() {
 }
 
 const setup = function() {
-    createCanvas(1000, 700);
+    createCanvas(540, 140);
     imageMode(CENTER);
-    rectMode(CENTER);
     // Creating Scale
     music_scale = new Scale(images);
 }
 
 const draw = function() {
-    background(100, 100, 100);
+    background(150, 150, 150);
     music_scale.update();
     music_scale.draw();
 }

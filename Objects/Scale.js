@@ -1,104 +1,94 @@
 class Scale {
 	constructor(images) {
-		this.notes = [];
+		this.bars = [];
+
 		this.x_dist = 30;
 		this.y_dist = 5;
 		this.selectedNote = undefined;
 
-		this.setupNotes(images);
+		this.setupBars(images);
 	}
 
-	setupNotes(images) {
-		let startPos = new Vec2(100, 400);
+	setupBars(images) {
+		let barPos1 = new Vec2(50, 50);
+		let change1 = new Vec2(barPos1.x + 25, barPos1.y + (3 * 8) - 1);
+		// a_sharp -> c_sharp
+		this.bars.push(new Bar(barPos1, [
+			new Note(change1.x, change1.y)
+				.getImages(images)
+				.setSharp(true)
+				.changePos(change1, this.x_dist, -this.y_dist)
+				.setNoteValue(1),
+			new Note(change1.x, change1.y)
+				.changePos(change1, this.x_dist, -this.y_dist)
+				.setNoteValue(2),
+			new Note(change1.x, change1.y)
+				.changePos(change1, this.x_dist, 0)
+				.setNoteValue(3),
+			new Note(change1.x, change1.y)
+				.getImages(images)
+				.setSharp(true)
+				.changePos(change1, this.x_dist, -this.y_dist)
+				.setNoteValue(4)
+		]));
 
-		let b_flat = new Note(startPos.x, startPos.y);
-		b_flat.getImages(images);
-		b_flat.setFlat(true);
-		this.notes.push(b_flat);
-		startPos.x += this.x_dist;
+		let barPos2 = new Vec2(barPos1.x + this.bars[0].width, barPos1.y);
+		let change2 = new Vec2(barPos2.x + 25, barPos2.y + (1 * 8) + 1);
+		// d -> f
+		this.bars.push(new Bar(barPos2, [
+			new Note(change2.x, change2.y)
+				.changePos(change2, this.x_dist, 0)
+				.setNoteValue(5),
+			new Note(change2.x, change2.y)
+				.getImages(images)
+				.setSharp(true)
+				.changePos(change2, this.x_dist, -this.y_dist)
+				.setNoteValue(6),
+			new Note(change2.x, change2.y)
+				.changePos(change2, this.x_dist, -this.y_dist)
+				.setNoteValue(7),
+			new Note(change2.x, change2.y)
+				.changePos(change2, this.x_dist, 0)
+				.setNoteValue(8)
+		]));
 
-		let b_natural = new Note(startPos.x, startPos.y);
-		b_natural.getImages(images);
-		b_natural.setNatural(true);
-		this.notes.push(b_natural);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let c = new Note(startPos.x, startPos.y);
-		this.notes.push(c);
-		startPos.x += this.x_dist;
-
-		let c_sharp = new Note(startPos.x, startPos.y);
-		c_sharp.getImages(images);
-		c_sharp.setSharp(true);
-		this.notes.push(c_sharp);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let d = new Note(startPos.x, startPos.y);
-		this.notes.push(d);
-		startPos.x += this.x_dist;
-
-		let d_sharp = new Note(startPos.x, startPos.y);
-		d_sharp.getImages(images);
-		d_sharp.setSharp(true);
-		this.notes.push(d_sharp);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let e = new Note(startPos.x, startPos.y);
-		this.notes.push(e);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let f = new Note(startPos.x, startPos.y);
-		this.notes.push(f);
-		startPos.x += this.x_dist;
-
-		let f_sharp = new Note(startPos.x, startPos.y);
-		f_sharp.getImages(images);
-		f_sharp.setSharp(true);
-		this.notes.push(f_sharp);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let g = new Note(startPos.x, startPos.y);
-		this.notes.push(g);
-		startPos.x += this.x_dist;
-
-		let g_sharp = new Note(startPos.x, startPos.y);
-		g_sharp.getImages(images);
-		g_sharp.setSharp(true);
-		this.notes.push(g_sharp);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let a = new Note(startPos.x, startPos.y);
-		this.notes.push(a);
-		startPos.x += this.x_dist; startPos.y -= this.y_dist;
-
-		let high_b_flat = new Note(startPos.x, startPos.y);
-		high_b_flat.getImages(images);
-		high_b_flat.setFlat(true);
-		this.notes.push(high_b_flat);
-	}
-
-	drawBar() {
-
+		let barPos3 = new Vec2(barPos2.x + this.bars[0].width, barPos2.y);
+		let change3 = new Vec2(barPos3.x + 25, barPos3.y);
+		// f_sharp -> a
+		this.bars.push(new Bar(barPos3, [
+			new Note(change3.x, change3.y)
+				.getImages(images)
+				.setSharp(true)
+				.changePos(change3, this.x_dist, -this.y_dist)
+				.setNoteValue(9),
+			new Note(change3.x, change3.y)
+				.changePos(change3, this.x_dist, 0)
+				.setLineOverUnder(true)
+				.setNoteValue(10),
+			new Note(change3.x, change3.y)
+				.getImages(images)
+				.setSharp(true)
+				.setLineOverUnder(true)
+				.changePos(change3, this.x_dist, -this.y_dist)
+				.setNoteValue(11),
+			new Note(change3.x, change3.y)
+				.changePos(change3, this.x_dist, 0)
+				.setLineThrough(true)
+				.setNoteValue(12)
+		]));
 	}
 
 	detectMouseClick() {
-		return {
-			detected: true,
-			note: this.notes[0]
-		};
+		
 	}
 
-	draw () {
-		this.drawBar();
-		this.notes.forEach(note => {
-			note.draw();
+	draw() {
+		this.bars.forEach(bar => {
+			bar.draw();
 		});
 	}
 
 	update() {
-		let result = this.detectMouseClick();
-		if (result.detected) {
-			if (this.selectedNote != result.note) this.selectedNote = result.note;
-		}
+		
 	}
 }
