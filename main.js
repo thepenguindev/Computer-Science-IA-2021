@@ -30,3 +30,10 @@ const draw = function() {
 window.preload = preload;
 window.setup = setup;
 window.draw = draw;
+
+
+/// FUN HTML THAT I HATE *cries*
+$(function() {
+    let canvas = $('canvas');
+    console.log(canvas);
+});

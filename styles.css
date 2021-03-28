@@ -1,0 +1,50 @@
+* {
+	background-color: rgb(200, 200, 200);
+}
+
+.p5Canvas {
+	border: 2px double black;
+	border-radius: 10px;
+	box-shadow:
+		0 0 0 4px  hsl(0, 0%, 50%),
+		0 0 0 8px hsl(0, 0%, 60%),
+		0 0 0 12px hsl(0, 0%, 70%),
+		0 0 0 16px hsl(0, 0%, 75%);
+
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#key-selector, #key-label {
+	background-color: rgb(150, 150, 150);
+}
+
+#key-selector {
+	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow:
+		0 0 0 4px  hsl(0, 0%, 50%),
+		0 0 0 8px hsl(0, 0%, 60%),
+		0 0 0 12px hsl(0, 0%, 70%),
+		0 0 0 16px hsl(0, 0%, 75%);
+
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	position: fixed;
+	top: 47.5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#key-label {
+	font-family:'Courier New', Courier, monospace;
+	font-size: 20px;
+}
+
+#keys {
+	background-color: white;
+}
