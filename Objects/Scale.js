@@ -109,6 +109,57 @@ class Scale {
 			return this.bars[2].notes[3];
 	}
 
+	getNoteFromValue(value) {
+		let returnVal;
+		this.bars.forEach(bar => {
+			bar.notes.forEach(note => {
+				if (note.note_value === value) {
+					returnVal = note;
+				}
+			});
+		});
+		return returnVal;
+	}
+
+	transpose_calc(note, val) {
+		let finalValue;
+		let noteValue = note.note_value;
+		let calc = noteValue - val;
+		if (calc <= 0) { 
+			finalValue = 12 + calc; 
+		} else { 
+			finalValue = calc; 
+		}
+		return this.getNoteFromValue(finalValue);
+	}
+
+	// Assuming the scale key is in C
+	transpose(note, keySig) {
+		if (keySig == 'Ab') {
+			return this.transpose_calc(note, 4)
+		} else if (keySig == 'A') {
+			return this.transpose_calc(note, 3);
+		} else if (keySig == 'Bb') {
+			return this.transpose_calc(note, 2);
+		} else if (keySig == 'B') {
+			return this.transpose_calc(note, 1);
+		} else if (keySig == 'C#') {
+			return this.transpose_calc(note, -1);
+		} else if (keySig == 'D') {
+			return this.transpose_calc(note, -2);
+		} else if (keySig == 'Eb') {
+			return this.transpose_calc(note, -3);
+		} else if (keySig == 'E') {
+			return this.transpose_calc(note, -4);
+		} else if (keySig == 'F') {
+			return this.transpose_calc(note, -5);
+		} else if (keySig == 'F#') {
+			return this.transpose_calc(note, -6);
+		} else if (keySig == 'G') {
+			return this.transpose_calc(note, -7);
+		}
+	}
+
 	draw() {
 		this.bars.forEach(bar => {
 			bar.draw();
@@ -118,7 +169,11 @@ class Scale {
 	update(currentlySelectedKeySig) {
 		this.draw();
 		let hoveredNote = this.detectMouseHover();
-		if (hoveredNote != undefined)
+		if (hoveredNote != undefined) {
 			hoveredNote.highlight(255, 0, 0);
+			let transposedNote = this.transpose(hoveredNote, currentlySelectedKeySig);
+			if (transposedNote != undefined)
+				transposedNote.highlight(0, 0, 255);
+		}
 	}
 }
