@@ -11,6 +11,7 @@ class Bar {
 	}
 
 	drawBar() {
+		stroke(0);
 		fill(255, 255, 255);
 		rect(this.pos.x, this.pos.y, this.width, this.height);
 		for (let i = 0; i <= 3; i++)

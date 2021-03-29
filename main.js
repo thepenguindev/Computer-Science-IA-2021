@@ -1,3 +1,15 @@
+/// FUN HTML MANIPULATION THAT I HATE *cries*
+var currentlySelectedKey;
+
+$(() => {
+    // Update Currently Selected Key
+    currentlySelectedKey = $('select').val();
+    $('select').change(() => {
+        currentlySelectedKey = $('select').val();
+    });
+});
+
+/// P5 JS
 var music_scale;
 
 // Images
@@ -22,18 +34,10 @@ const setup = function() {
 
 const draw = function() {
     background(150, 150, 150);
-    music_scale.update();
-    music_scale.draw();
+    music_scale.update(currentlySelectedKey);
 }
 
 // Exposing Browser to p5 functions because modules are wonky w/ p5
 window.preload = preload;
 window.setup = setup;
 window.draw = draw;
-
-
-/// FUN HTML THAT I HATE *cries*
-$(function() {
-    let canvas = $('canvas');
-    console.log(canvas);
-});

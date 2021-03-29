@@ -47,6 +47,15 @@ class Note {
 		}
 	}
 
+	highlight(r, g, b) {
+		let rectWidth = 20;
+		let rectHeight = 40;
+
+		noStroke();
+		fill(r, g, b, 100);
+		rect(this.pos.x - (rectWidth / 2), this.pos.y - (rectHeight / 2) + 10, rectWidth, rectHeight);
+	}
+
 	displayImage(_image) {
 		let image_pos = new Vec2(this.pos.x - (2.7 * this.horizontal_radius), this.pos.y);
 		image(_image, image_pos.x, image_pos.y);
