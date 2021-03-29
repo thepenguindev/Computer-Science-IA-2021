@@ -48,3 +48,22 @@
 #keys {
 	background-color: white;
 }
+
+#p-1, #p-2 {
+	font-family:'Courier New', Courier, monospace;
+	font-size: 18px;
+}
+
+#p-1 {
+	position: fixed;
+	top: 5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#p-2 {
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
