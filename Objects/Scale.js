@@ -127,6 +127,8 @@ class Scale {
 		let calc = noteValue - val;
 		if (calc <= 0) { 
 			finalValue = 12 + calc; 
+		} else if (calc > 12) {
+			finalValue = calc - 12;
 		} else { 
 			finalValue = calc; 
 		}
