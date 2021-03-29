@@ -1,10 +1,8 @@
 class Scale {
 	constructor(images) {
 		this.bars = [];
-
 		this.x_dist = 30;
 		this.y_dist = 5;
-		this.selectedNote = undefined;
 
 		this.setupBars(images);
 	}
@@ -168,12 +166,12 @@ class Scale {
 		});
 	}
 
-	update(currentlySelectedKeySig) {
+	update(selKeySig) {
 		this.draw();
 		let hoveredNote = this.detectMouseHover();
 		if (hoveredNote != undefined) {
 			hoveredNote.highlight(255, 0, 0);
-			let transposedNote = this.transpose(hoveredNote, currentlySelectedKeySig);
+			let transposedNote = this.transpose(hoveredNote, selKeySig);
 			if (transposedNote != undefined)
 				transposedNote.highlight(0, 0, 255);
 		}

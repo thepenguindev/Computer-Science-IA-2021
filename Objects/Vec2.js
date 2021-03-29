@@ -3,13 +3,4 @@ class Vec2 {
 		this.x = x;
 		this.y = y;
 	}
-
-	add(vec) {
-		this.x += vec.x;
-		this.y += vec.y;
-	}
-
-	equals(vec) {
-		return this.x == vec.x && this.y == vec.y;
-	}
 }
